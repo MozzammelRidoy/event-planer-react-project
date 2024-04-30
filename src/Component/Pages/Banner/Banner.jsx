@@ -1,8 +1,9 @@
+import Carousel from "./Carousel/Carousel";
 
 const Banner = () => {
     return (
-        <div>
-                <h2 className="text-3xl text-center">Banner</h2>
+        <div className="">
+                <Carousel></Carousel>
         </div>
     );
 };

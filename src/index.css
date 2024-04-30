@@ -5,3 +5,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+nav a.active{
+    background-color: #1E88E5;
+    color: white;
+}

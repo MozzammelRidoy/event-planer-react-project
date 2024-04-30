@@ -4,11 +4,11 @@ import { useState } from "react";
 import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/styles.css";
 import { IoIosLogIn } from "react-icons/io";
-
+import { TypeAnimation } from "react-type-animation";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
-  const [show, setShow] = useState(false); 
+  const [show, setShow] = useState(false);
 
   const navLinksEvnet = (
     <>
@@ -65,51 +65,68 @@ const Navbar = () => {
   );
 
   return (
-    <div>
-      <div className="navbar bg-base-100">
+    <nav>
+      <div className="navbar shadow-lg bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div tabIndex={0} className="lg:hidden">
               <Hamburger toggled={isOpen} size={30} toggle={setOpen} />
             </div>
             <ul
               tabIndex={0}
-              className={`menu menu-sm absolute mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 ${
-                !isOpen ? "hidden" : ""
+              className={`menu menu-sm absolute duration-500 mt-3 z-10 p-2 shadow bg-base-100  w-52 ${
+                !isOpen ? "-left-80 top-2" : "-left-2 top-11"
               }`}
             >
               {navLinksMenu}
             </ul>
           </div>
-          <a className="md:tracking-wides text-nowrap	tracking-wider	 text-xl  md:text-3xl font-Pacifico">
-            Event Planer
+          <a className="md:tracking-wides  text-nowrap	tracking-wider	 text-2xl  md:text-4xl font-Pacifico">
+            {/* Event Planer */}
+            <TypeAnimation
+              sequence={[
+                // Same substring at the start will only be typed out once, initially
+                "Event Planer", 
+                1000, 
+                "", 
+                1000, 
+              ]}
+              wrapper="span"
+              speed={40}
+              style={{ display: "inline-block" }}
+              repeat={Infinity}
+            />
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu md:gap-5 md:text-lg menu-horizontal">
+          <ul className="menu md:gap-5 md:text-lg z-10 menu-horizontal">
             {navLinksMenu}
           </ul>
         </div>
         <div className="navbar-end flex items-center gap-1 text-xl md:gap-2">
           <div>
-            
-              <div onClick={()=>setShow(!show)} className="md:hidden text-4xl">
+            <div onClick={() => setShow(!show)} className="md:hidden text-4xl">
               <IoIosLogIn />
-
-              </div>
+            </div>
           </div>
-          <div className={`md:flex items-center  gap-3 ${show ? 'flex items-center top-14 bg-slate-300 right-3 absolute z-10 p-8' : 'hidden static'}`}>
+          <div
+            className={`md:flex items-center  gap-3 ${
+              show
+                ? "flex items-center top-14 bg-slate-300 right-3 absolute z-10 p-8"
+                : "hidden static"
+            }`}
+          >
             <AwesomeButton size="small" type="primary">
-              <button>Log-in</button>
+              Log-in
             </AwesomeButton>
             <span className="text-white md:text-black"> or </span>
             <AwesomeButton size="small" type="primary">
-              <button>Register</button>
+              Register
             </AwesomeButton>
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

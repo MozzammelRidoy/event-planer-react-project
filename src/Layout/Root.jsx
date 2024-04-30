@@ -8,8 +8,8 @@ const Root = () => {
         <div className=' font-Ubuntu'>
                 <div>
 
-                <div className='mx-auto md:max-w-6xl min-h-screen border border-black'>
                 <Navbar/>
+                <div className='min-h-screen border border-black'>
                 <Outlet></Outlet>
                 </div>
                 </div>
