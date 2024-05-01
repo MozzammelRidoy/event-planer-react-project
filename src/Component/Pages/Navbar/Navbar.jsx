@@ -74,7 +74,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className={`menu menu-sm absolute duration-500 mt-3 z-10 p-2 shadow bg-base-100  w-52 ${
+              className={`menu menu-sm md:hidden absolute duration-500 mt-3 z-10 p-2 shadow bg-base-100  w-52 ${
                 !isOpen ? "-left-80 top-2" : "-left-2 top-11"
               }`}
             >

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Weddings",
+    "headline": "Make Your Dream Wedding Come True",
+    "details": "Experience the wedding of your dreams with our expert planning services. From elegant venues to exquisite decor and personalized touches, we'll ensure every moment is unforgettable. Let us handle the details while you focus on celebrating love.",
+    "image": "https://i.ibb.co/wYhMTwT/wedding-couple-france.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Birthday",
+    "headline": "Celebrate Your Special Day in Style",
+    "details": "Throw the ultimate birthday bash with our comprehensive party planning services. From themed decorations to entertainment and delicious treats, we'll create an unforgettable experience for you and your guests. Let's make your birthday wishes come true!",
+    "image": "https://i.ibb.co/NynLwmT/party-portraits-young-adults-having-fun.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Anniversary",
+    "headline": "Commemorate Your Love and Commitment",
+    "details": "Celebrate your journey together with a memorable anniversary party. Whether it's your first year or golden anniversary, our team will craft an event that reflects your love story. Let's raise a toast to many more years of happiness!",
+    "image": "https://i.ibb.co/7bqWn7D/pexels-budgeron-bach-6532812.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Engagement",
+    "headline": "Start Your Journey with Love's Embrace",
+    "details": "Start your journey together with a stunning engagement party. From romantic settings to personalized details, we'll create an event that captures the magic of your love story. Let's celebrate this special milestone with friends and family!",
+    "image": "https://i.ibb.co/Zcd3j8b/pexels-alonssus-2894864.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Retirement",
+    "headline": " Farewell to Work, Hello New Adventures",
+    "details": "Say goodbye to the working world and hello to a new chapter of life with a memorable retirement party. Let us help you honor the retiree with heartfelt speeches, personalized gifts, and a festive atmosphere. Cheers to a well-deserved retirement!",
+    "image": "https://i.ibb.co/Fhdpp3r/pexels-cottonbro-6158648.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Baby Shower",
+    "headline": " Embrace joy as We Welcome New Life",
+    "details": "Celebrate the impending arrival of your bundle of joy with a joyous baby shower. From adorable decorations to fun games and sweet treats, we'll create a memorable event for mom-to-be and guests alike. Let's shower love and blessings on the growing family!",
+    "image": "https://i.ibb.co/g357Y8k/pexels-meliscan-16167676.jpg"
+  }
+]

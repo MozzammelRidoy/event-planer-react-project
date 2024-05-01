@@ -1,10 +1,19 @@
+import SlideText from "../../Banner/Carousel/TextSlideer";
 
 const Header = () => {
-    return (
-        <div>
-                <h3 className="text-4xl text-center">Header</h3>
-        </div>
-    );
+  const mock = [
+    "Concert",
+    "Seminar",
+    "Birthday",
+    "Conference",
+    "Wedding",
+    "Festival",
+  ];
+  return (
+    <div>
+      Our Plan for Your <SlideText source={mock} /> Event
+    </div>
+  );
 };
 
 export default Header;

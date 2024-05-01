@@ -36,7 +36,7 @@ const SlideText = ({ source }) => {
             transform: `translateY(${
               currentItemIndex === index ? `-${(rect?.height ?? 0) * 2}px` : 0
             })`,
-            transition: "all 0.9s ease-in-out",
+            transition: "all 1s ease-in-out",
           }}
         >
           {text}
