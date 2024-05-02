@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div>
+    <div data-aos="zoom-out-up" data-aos-duration="1500">
       <footer className="p-3 md:p-10 bg-base-200 text-base-content">
         <div className="md:max-w-6xl md:mx-auto footer">
         <aside>

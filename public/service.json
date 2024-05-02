@@ -4,41 +4,77 @@
     "title": "Weddings",
     "headline": "Make Your Dream Wedding Come True",
     "details": "Experience the wedding of your dreams with our expert planning services. From elegant venues to exquisite decor and personalized touches, we'll ensure every moment is unforgettable. Let us handle the details while you focus on celebrating love.",
-    "image": "https://i.ibb.co/wYhMTwT/wedding-couple-france.jpg"
+    "image": "https://i.ibb.co/wYhMTwT/wedding-couple-france.jpg",
+    "packages": [
+      { "name": "Fairy Tale Fantasy Package", "price": 5000 },
+      { "name": "Royal Romance Package", "price": 7500 },
+      { "name": "Enchanted Garden Package", "price": 6000 },
+      { "name": "Classic Elegance Package", "price": 5500 }
+    ]
   },
   {
     "id": 2,
     "title": "Birthday",
     "headline": "Celebrate Your Special Day in Style",
     "details": "Throw the ultimate birthday bash with our comprehensive party planning services. From themed decorations to entertainment and delicious treats, we'll create an unforgettable experience for you and your guests. Let's make your birthday wishes come true!",
-    "image": "https://i.ibb.co/NynLwmT/party-portraits-young-adults-having-fun.jpg"
+    "image": "https://i.ibb.co/NynLwmT/party-portraits-young-adults-having-fun.jpg",
+    "packages": [
+      { "name": "Ultimate Party Extravaganza Package", "price": 2000 },
+      { "name": "VIP Celebration Package", "price": 2500 },
+      { "name": "Themed Spectacular Package", "price": 1800 },
+      { "name": "Deluxe Fun-Filled Package", "price": 2200 }
+    ]
   },
   {
     "id": 3,
     "title": "Anniversary",
     "headline": "Commemorate Your Love and Commitment",
     "details": "Celebrate your journey together with a memorable anniversary party. Whether it's your first year or golden anniversary, our team will craft an event that reflects your love story. Let's raise a toast to many more years of happiness!",
-    "image": "https://i.ibb.co/7bqWn7D/pexels-budgeron-bach-6532812.jpg"
+    "image": "https://i.ibb.co/7bqWn7D/pexels-budgeron-bach-6532812.jpg",
+    "packages": [
+      { "name": "Love Story Celebration Package", "price": 3000 },
+      { "name": "Golden Memories Package", "price": 3500 },
+      { "name": "Everlasting Romance Package", "price": 3200 },
+      { "name": "Milestone Moments Package", "price": 2800 }
+    ]
   },
   {
     "id": 4,
     "title": "Engagement",
     "headline": "Start Your Journey with Love's Embrace",
     "details": "Start your journey together with a stunning engagement party. From romantic settings to personalized details, we'll create an event that captures the magic of your love story. Let's celebrate this special milestone with friends and family!",
-    "image": "https://i.ibb.co/Zcd3j8b/pexels-alonssus-2894864.jpg"
+    "image": "https://i.ibb.co/Zcd3j8b/pexels-alonssus-2894864.jpg",
+    "packages": [
+      { "name": "Journey of Love Package", "price": 1800 },
+      { "name": "Romance Unveiled Package", "price": 2000 },
+      { "name": "Forever Together Package", "price": 2200 },
+      { "name": "Sparkling Beginnings Package", "price": 2500 }
+    ]
   },
   {
     "id": 5,
     "title": "Retirement",
-    "headline": " Farewell to Work, Hello New Adventures",
+    "headline": "Farewell to Work, Hello New Adventures",
     "details": "Say goodbye to the working world and hello to a new chapter of life with a memorable retirement party. Let us help you honor the retiree with heartfelt speeches, personalized gifts, and a festive atmosphere. Cheers to a well-deserved retirement!",
-    "image": "https://i.ibb.co/Fhdpp3r/pexels-cottonbro-6158648.jpg"
+    "image": "https://i.ibb.co/Fhdpp3r/pexels-cottonbro-6158648.jpg",
+    "packages": [
+      { "name": "New Adventures Awaits Package", "price": 1500 },
+      { "name": "Well-Deserved Rest Package", "price": 1700 },
+      { "name": "Cheers to Retirement Package", "price": 1600 },
+      { "name": "Golden Years Celebration Package", "price": 1800 }
+    ]
   },
   {
     "id": 6,
     "title": "Baby Shower",
-    "headline": " Embrace joy as We Welcome New Life",
+    "headline": "Embrace Joy as We Welcome New Life",
     "details": "Celebrate the impending arrival of your bundle of joy with a joyous baby shower. From adorable decorations to fun games and sweet treats, we'll create a memorable event for mom-to-be and guests alike. Let's shower love and blessings on the growing family!",
-    "image": "https://i.ibb.co/g357Y8k/pexels-meliscan-16167676.jpg"
+    "image": "https://i.ibb.co/g357Y8k/pexels-meliscan-16167676.jpg",
+    "packages": [
+      { "name": "Bundle of Joy Package", "price": 1200 },
+      { "name": "Shower of Blessings Package", "price": 1400 },
+      { "name": "Mom-to-Be Bliss Package", "price": 1300 },
+      { "name": "Sweet Arrival Celebration Package", "price": 1500 }
+    ]
   }
 ]

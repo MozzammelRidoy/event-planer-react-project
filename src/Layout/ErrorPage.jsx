@@ -1,25 +1,54 @@
-import { Link, useRouteError } from "react-router-dom";
+import { Link, useNavigate, useRouteError } from "react-router-dom";
 import Navbar from "../Component/Pages/Navbar/Navbar";
+import errorImage from "../assets/imaga/error.jpg";
 
 const ErrorPage = () => {
   const error = useRouteError();
+  const navigate = useNavigate();
 
   return (
     <div>
       <Navbar />
-      <div className="min-h-screen">
-        <h1>Oops!</h1>
-        <p>Sorry, an unexpected error has occurred.</p>
-        <p>
-          <i>{error.statusText || error.message}</i>
-        </p>
-        <Link to={"/"}>
-          <button>Home</button>
-        </Link>
+      <div className="relative max-w-screen-2xl mx-auto">
+        <div className="relative">
+          <div className="">
+            <img className="w-100" src={errorImage} alt="" />
+          </div>
+          <div  className="absolute top-0 left-0 w-full h-full flex md:space-y-3  bg-black bg-opacity-20 text-white flex-col justify-center items-center text-center">
+            <h1 data-aos="zoom-in" data-aos-duration="1500" className="md:text-6xl text-4xl font-bold">Oops!</h1>
+            <p data-aos="zoom-in" data-aos-duration="1500" className="md:text-8xl text-6xl font-bold font-Ubuntu">
+              <i>{error.status || error.status}</i>
+            </p>
+            <p className="text-xl">
+              Page <i>{error.statusText || error.message}</i>
+            </p>
+            <p className="md:text-2xl text-xl">
+              Sorry, an unexpected error has occurred.
+            </p>
+            <div className="md:mt-8 w-3/6 md:w-3/12 flex justify-between gap-3 items-center">
+              <div>
+                <button
+                  className=" md:px-10 md:py-4 px-4 py-1 md:text-xl text-white bg-slate-500 btn-outline"
+                  onClick={() => navigate(-1)}
+                >
+                  Go Back
+                </button>
+              </div>
+
+              <div>
+                <Link to={"/"}>
+                  <button className=" md:px-10 md:py-4 px-4 py-1 md:text-xl text-white bg-slate-500 btn-outline">
+                    Home
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div>
-        <footer className="md:px-10 p-3  md:py-4 border-t bg-base-200 text-base-content border-base-300">
-          <div className="footer md:max-w-6xl flex items-center justify-between mx-auto">
+        <footer className="max-w-screen-2xl w-full mx-auto p-3 md:sticky bottom-0 absolute border-t bg-base-200 text-base-content border-base-300">
+          <div className="footer  flex items-center justify-between ">
             <aside className="items-center grid-flow-col">
               <img
                 className="w-12 h-12 rounded-full"

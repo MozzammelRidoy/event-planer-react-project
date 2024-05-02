@@ -2,7 +2,7 @@
 
 import Banner from "../../Banner/Banner";
 import Gallery from "../Gallery/Gallery";
-import Pakage from "../Pakage/Pakage";
+import PakagePlan from "../Pakage/PakagePlan";
 import Services from "../Service/Services";
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
         <Services></Services>
       </div>
       <div className="my-2">
-        <Pakage></Pakage>
+        <PakagePlan></PakagePlan>
       </div>
 
       <div className="my-2">

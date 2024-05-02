@@ -30,7 +30,7 @@ const ServiceCarouselCard = () => {
           stretch: 0,
           depth: 100,
           modifier: 1,
-        
+
           slideShadows: true,
         }}
         pagination={true}
@@ -49,7 +49,7 @@ const ServiceCarouselCard = () => {
           </div>
         ))}
 
-        <div></div>
+      
       </Swiper>
     </>
   );
