@@ -1,10 +1,14 @@
 // import React from 'react';
+import ReactGallery from './ReactGallery';
 
 const Gallery = () => {
-    return (
+        return (
         <div>
 
-            <h2 data-aos="zoom-in" className="md:text-6xl text-2xl font-bold text-center">Our Previos Gallery</h2>
+            <h2 data-aos="zoom-in" data-aos-duration="1500" className="md:text-6xl my-8 text-3xl font-bold text-center">Our Previos Gallery</h2>
+            <div>
+               <ReactGallery></ReactGallery>
+            </div>
             
         </div>
     );

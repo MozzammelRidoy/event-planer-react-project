@@ -36,6 +36,7 @@ const ServiceCarouselCard = () => {
         pagination={true}
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper cardSwiper "
+        data-aos="zoom-in" data-aos-duration="1000"
       >
         {services.map((service) => (
           <div key={service.id} className="relative">

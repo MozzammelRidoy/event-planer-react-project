@@ -5,9 +5,9 @@ import Footer from "../Component/Pages/Footer/Footer";
 
 const Root = () => {
   return (
-    <div className=" font-Ubuntu">
+    <div className="overflow-hidden font-Ubuntu">
       <div className="max-w-screen-xl mx-auto">
-        <div className="min-h-screen  border border-black">
+        <div className="min-h-screen">
           <Navbar />
           <Outlet></Outlet>
         </div>
