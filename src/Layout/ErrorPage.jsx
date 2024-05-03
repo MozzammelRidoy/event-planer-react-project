@@ -25,8 +25,8 @@ const ErrorPage = () => {
             <p className="md:text-2xl text-xl">
               Sorry, an unexpected error has occurred.
             </p>
-            <div className="md:mt-8 w-3/6 md:w-3/12 flex justify-between gap-3 items-center">
-              <div>
+            <div className="md:mt-8 w-3/5 md:w-3/12 flex justify-between gap-3 items-center">
+              <div data-aos='zoom-in-right' data-aos-duration="2000"  >
                 <button
                   className=" md:px-10 md:py-4 px-4 py-1 md:text-xl text-white bg-slate-500 btn-outline"
                   onClick={() => navigate(-1)}
@@ -35,7 +35,7 @@ const ErrorPage = () => {
                 </button>
               </div>
 
-              <div>
+              <div data-aos='zoom-in-left' data-aos-duration="2000" >  
                 <Link to={"/"}>
                   <button className=" md:px-10 md:py-4 px-4 py-1 md:text-xl text-white bg-slate-500 btn-outline">
                     Home

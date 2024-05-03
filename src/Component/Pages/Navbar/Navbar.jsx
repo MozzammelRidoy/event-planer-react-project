@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Sling as Hamburger } from "hamburger-react";
 import { useState } from "react";
 import { AwesomeButton } from "react-awesome-button";
@@ -86,7 +86,7 @@ const Navbar = () => {
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
-                "Event Planer", 
+                "Event Planner", 
                 1000, 
                 "", 
                 1000, 
@@ -116,13 +116,17 @@ const Navbar = () => {
                 : "hidden static"
             }`}
           >
+            <Link to={'/login'}>
             <AwesomeButton size="small" type="primary">
               Log-in
             </AwesomeButton>
+            </Link>
             <span className="text-white md:text-black"> or </span>
-            <AwesomeButton size="small" type="primary">
+           <Link to={'register'}>
+           <AwesomeButton size="small" type="primary">
               Register
             </AwesomeButton>
+           </Link>
           </div>
         </div>
       </div>

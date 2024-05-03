@@ -7,7 +7,7 @@ const Root = () => {
   return (
     <div className="overflow-hidden font-Ubuntu">
       <div className="max-w-screen-xl mx-auto">
-        <div className="min-h-screen">
+        <div className="">
           <Navbar />
           <Outlet></Outlet>
         </div>

@@ -14,7 +14,6 @@ import lgShare from 'lightgallery/plugins/share';
 
 const ReactGallery = () => {
   const [gallery, setGellery] = useState([]); 
-  console.log(gallery);
   const containerRef = useRef(null);
 
   const onInit = useCallback((detail) => {

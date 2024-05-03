@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Weddings",
     "headline": "Make Your Dream Wedding Come True",
-    "details": "Experience the wedding of your dreams with our expert planning services. From elegant venues to exquisite decor and personalized touches, we'll ensure every moment is unforgettable. Let us handle the details while you focus on celebrating love.",
+    "details": "Plan your dream wedding with us. Our expert team will help you choose the perfect venue, create stunning decorations, and ensure every moment is unforgettable. Let us take care of the details while you focus on celebrating your love. We understand that your wedding day is one of the most important days of your life, and we are dedicated to making it truly special. From the moment you say 'yes' to the final dance of the evening, we'll be by your side, ensuring everything runs smoothly and according to your vision. Whether you dream of a romantic beach ceremony, a traditional church wedding, or a glamorous ballroom reception, we'll work tirelessly to bring your vision to life. Our team of experienced planners will handle every aspect of your wedding, from coordinating vendors to managing timelines, so you can relax and enjoy every moment of your special day. Let us turn your dream wedding into a reality.",
     "image": "https://i.ibb.co/wYhMTwT/wedding-couple-france.jpg",
     "packages": [
       { "name": "Fairy Tale Fantasy Package", "price": 5000 },
@@ -16,7 +16,7 @@
     "id": 2,
     "title": "Birthday",
     "headline": "Celebrate Your Special Day in Style",
-    "details": "Throw the ultimate birthday bash with our comprehensive party planning services. From themed decorations to entertainment and delicious treats, we'll create an unforgettable experience for you and your guests. Let's make your birthday wishes come true!",
+    "details": "Let's make your birthday unforgettable. Our team will organize everything from decorations to entertainment, ensuring your celebration is filled with joy and laughter. It's your day to shine! Birthdays are a time to celebrate life, create lasting memories, and surround yourself with the people who matter most. Whether you're planning a small gathering with close friends or a lavish party for all your loved ones, we'll make sure your birthday is one to remember. From themed decorations to personalized cakes, we'll take care of every detail so you can relax and enjoy your special day. Let us handle the planning so you can focus on having fun and making memories that will last a lifetime.",
     "image": "https://i.ibb.co/NynLwmT/party-portraits-young-adults-having-fun.jpg",
     "packages": [
       { "name": "Ultimate Party Extravaganza Package", "price": 2000 },
@@ -29,7 +29,7 @@
     "id": 3,
     "title": "Anniversary",
     "headline": "Commemorate Your Love and Commitment",
-    "details": "Celebrate your journey together with a memorable anniversary party. Whether it's your first year or golden anniversary, our team will craft an event that reflects your love story. Let's raise a toast to many more years of happiness!",
+    "details": "Celebrate your anniversary in style. Our team will create a personalized event that honors your love story and creates new memories for years to come. Here's to many more happy years together! Your anniversary is a time to reflect on the journey you've shared together and to celebrate the love and commitment that has kept you strong. Whether you're celebrating one year or fifty, we'll help you create an anniversary celebration that's as unique as your love story. From intimate dinners to lavish parties, we'll work with you to create an event that captures the essence of your relationship and celebrates the milestones you've reached together. Let us take care of the details so you can focus on enjoying each other's company and creating new memories that will last a lifetime.",
     "image": "https://i.ibb.co/7bqWn7D/pexels-budgeron-bach-6532812.jpg",
     "packages": [
       { "name": "Love Story Celebration Package", "price": 3000 },
@@ -42,7 +42,7 @@
     "id": 4,
     "title": "Engagement",
     "headline": "Start Your Journey with Love's Embrace",
-    "details": "Start your journey together with a stunning engagement party. From romantic settings to personalized details, we'll create an event that captures the magic of your love story. Let's celebrate this special milestone with friends and family!",
+    "details": "Begin your journey together with an unforgettable engagement party. Our team will create a magical event that celebrates your love and commitment surrounded by family and friends. Your engagement is the beginning of a new chapter in your life together, and it's worth celebrating in style. Whether you're planning a small gathering or a lavish party, we'll help you create an event that captures the excitement and joy of this special moment. From romantic settings to personalized details, we'll take care of everything so you can relax and enjoy this milestone with the people who matter most. Let us help you start your journey with love's embrace.",
     "image": "https://i.ibb.co/Zcd3j8b/pexels-alonssus-2894864.jpg",
     "packages": [
       { "name": "Journey of Love Package", "price": 1800 },
@@ -55,7 +55,7 @@
     "id": 5,
     "title": "Retirement",
     "headline": "Farewell to Work, Hello New Adventures",
-    "details": "Say goodbye to the working world and hello to a new chapter of life with a memorable retirement party. Let us help you honor the retiree with heartfelt speeches, personalized gifts, and a festive atmosphere. Cheers to a well-deserved retirement!",
+    "details": "Say goodbye to the working world and hello to new adventures with a memorable retirement party. Our team will ensure the retiree feels appreciated and celebrated as they embark on this exciting new chapter. Retirement is a time to reflect on a lifetime of achievements and to look forward to the adventures that lie ahead. Whether you're planning a small gathering or a big bash, we'll help you create a retirement party that honors the retiree's contributions and celebrates their future. From heartfelt speeches to personalized gifts, we'll take care of every detail so you can focus on enjoying this special moment with family and friends. Let us help you say farewell to work and hello to new adventures.",
     "image": "https://i.ibb.co/Fhdpp3r/pexels-cottonbro-6158648.jpg",
     "packages": [
       { "name": "New Adventures Awaits Package", "price": 1500 },
@@ -68,7 +68,7 @@
     "id": 6,
     "title": "Baby Shower",
     "headline": "Embrace Joy as We Welcome New Life",
-    "details": "Celebrate the impending arrival of your bundle of joy with a joyous baby shower. From adorable decorations to fun games and sweet treats, we'll create a memorable event for mom-to-be and guests alike. Let's shower love and blessings on the growing family!",
+    "details": "Celebrate the upcoming arrival of your bundle of joy with a joyous baby shower. Our team will create a heartwarming event filled with love, laughter, and adorable decorations. Welcoming a new baby into the world is a special occasion that deserves to be celebrated with friends and family. Whether you're expecting your first child or adding to your growing family, we'll help you create a baby shower that's as unique as your little one. From cute decorations to fun games, we'll take care of everything so you can relax and enjoy this magical time. Let us help you embrace joy as you welcome new life into the world.",
     "image": "https://i.ibb.co/g357Y8k/pexels-meliscan-16167676.jpg",
     "packages": [
       { "name": "Bundle of Joy Package", "price": 1200 },
