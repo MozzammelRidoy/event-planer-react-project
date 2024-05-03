@@ -1,24 +1,66 @@
 import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import { useState } from "react";
+import { FaEyeSlash } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 
 const Register = () => {
+  const { createNewUser, githubLogin, googleLogin } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
+  const location = useLocation();
+
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const name = form.get("name");
+    let photo = form.get("photo");
+    if (!photo) {
+      photo =
+        "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg";
+    }
+
     const email = form.get("email");
     const password = form.get("password");
     e.target.reset();
 
     console.log(name, email, password);
-    navigate("/");
+    createNewUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        updateProfile(result.user, {
+          displayName: name,
+          photoURL: photo,
+        });
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((err) => console.log(err));
   };
+  const handleGoolgeLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((err) => console.log(err));
+  };
+  const handleGithubLogin = () => {
+    githubLogin()
+      .then((result) => {
+        console.log(result.user);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div>
-      <div >
+      <div>
         {/* form  */}
         <div
           data-aos="zoom-in"
@@ -29,17 +71,21 @@ const Register = () => {
             Register
           </h2>
           <div className="grid md:grid-cols-2 px-8   gap-3">
-            <button className="w-full btn-outline btn">
+            <button
+              onClick={handleGoolgeLogin}
+              className="w-full btn-outline btn"
+            >
               <FcGoogle className="text-2xl" />
               Login with Google
             </button>
-            <button className="w-full btn-outline btn">
-              <FaFacebook className="text-2xl text-blue-700" /> Login with
-              Facebook
+            <button
+              onClick={handleGithubLogin}
+              className="w-full btn-outline btn"
+            >
+              <FaGithub className="text-2xl " /> Login with Github
             </button>
           </div>
           <p className="text-center text-xl mt-2">or</p>
-
 
           <form onSubmit={handleRegister} className=" px-8 py-0">
             <div className="form-control ">
@@ -56,14 +102,13 @@ const Register = () => {
             </div>
             <div className="form-control ">
               <label className="label">
-                <span className="label-text">Name</span>
+                <span className="label-text">Photo</span>
               </label>
               <input
                 type="text"
-                name="name"
-                placeholder="name"
+                name="photo"
+                placeholder="photo (optional)"
                 className="input input-bordered"
-                required
               />
             </div>
             <div className="form-control">
@@ -78,17 +123,23 @@ const Register = () => {
                 required
               />
             </div>
-            <div className="form-control">
+            <div className="form-control relative">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="password"
+                type={`${showPassword ? "text" : "password"}`}
                 name="password"
                 placeholder="password"
                 className="input input-bordered"
                 required
               />
+              <span
+                onClick={() => setShowPassword(!showPassword)}
+                className="text-2xl absolute top-12 right-3"
+              >
+                {showPassword ? <FaEye /> : <FaEyeSlash />}
+              </span>
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-outline text-white text-sm btn-primary">

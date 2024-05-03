@@ -1,14 +1,22 @@
 import { Link, NavLink } from "react-router-dom";
 import { Sling as Hamburger } from "hamburger-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/styles.css";
 import { IoIosLogIn } from "react-icons/io";
 import { TypeAnimation } from "react-type-animation";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const [show, setShow] = useState(false);
+  const { user, userLogout } = useContext(AuthContext);
+  let userImage =
+    "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg";
+
+  if (user) {
+    userImage = user.photoURL;
+  }
 
   const navLinksEvnet = (
     <>
@@ -86,10 +94,10 @@ const Navbar = () => {
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
-                "Event Planner", 
-                1000, 
-                "", 
-                1000, 
+                "Event Planner",
+                1000,
+                "",
+                1000,
               ]}
               wrapper="span"
               speed={40}
@@ -103,31 +111,84 @@ const Navbar = () => {
             {navLinksMenu}
           </ul>
         </div>
+
+
+        {/* NavBar End // Login or Registration or LogOut Option  */}
+
         <div className="navbar-end flex items-center gap-1 text-xl md:gap-2">
-          <div>
-            <div onClick={() => setShow(!show)} className="md:hidden text-4xl">
-              <IoIosLogIn />
+          {user ? (
+            <div>
+              <div>
+                <div
+                  onClick={() => setShow(!show)}
+                  className="md:hidden text-4xl"
+                >
+                  <div className="avatar online">
+                    <div className="w-10 rounded-full">
+                      <img src={userImage} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className={`md:flex items-center  gap-3 ${
+                  show
+                    ? "flex items-center top-16 bg-white  right-0 absolute z-10 p-8"
+                    : "hidden static"
+                }`}
+              >
+                <div className="hidden md:flex items-center gap-2">
+                  <p className="text-xl">{user.displayName}</p>
+                <div className="avatar  online ">
+                  <div className="w-10 rounded-full">
+                    <img src={userImage} />
+                  </div>
+                </div>
+                </div>
+                <div className="">
+                <span className="text-xl md:hidden me-3">{user.displayName}</span>
+                <span onClick={() => userLogout()}>
+
+                  <AwesomeButton  size="small" type="primary">
+                    Log Out
+                  </AwesomeButton>
+
+
+                </span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div
-            className={`md:flex items-center  gap-3 ${
-              show
-                ? "flex items-center top-14 bg-slate-300 right-3 absolute z-10 p-8"
-                : "hidden static"
-            }`}
-          >
-            <Link to={'/login'}>
-            <AwesomeButton size="small" type="primary">
-              Log-in
-            </AwesomeButton>
-            </Link>
-            <span className="text-white md:text-black"> or </span>
-           <Link to={'register'}>
-           <AwesomeButton size="small" type="primary">
-              Register
-            </AwesomeButton>
-           </Link>
-          </div>
+          ) : (
+            <div>
+              <div>
+                <div
+                  onClick={() => setShow(!show)}
+                  className="md:hidden text-4xl"
+                >
+                  <IoIosLogIn />
+                </div>
+              </div>
+              <div
+                className={`md:flex items-center  gap-3 ${
+                  show
+                    ? "flex items-center top-14 bg-slate-300 right-3 absolute z-10 p-8"
+                    : "hidden static"
+                }`}
+              >
+                <Link to={"/login"}>
+                  <AwesomeButton size="small" type="primary">
+                    Log-in
+                  </AwesomeButton>
+                </Link>
+                <span className="text-white md:text-black"> or </span>
+                <Link to={"register"}>
+                  <AwesomeButton size="small" type="primary">
+                    Register
+                  </AwesomeButton>
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </nav>

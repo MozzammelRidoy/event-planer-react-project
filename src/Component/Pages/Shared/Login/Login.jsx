@@ -1,35 +1,63 @@
 import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
-
-
+import { FaFacebook, FaGithub } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { FaEyeSlash } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const navigate = useNavigate(); 
+  const [showPassword, setShowPassword] = useState(false);
+  const { userLogin, googleLogin, githubLogin } = useContext(AuthContext);
 
-  const handleLogin = e => {
-    e.preventDefault()
-    const form = new FormData(e.currentTarget); 
-    
-    const email = form.get('email'); 
-    const password = form.get('password'); 
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+
+    const email = form.get("email");
+    const password = form.get("password");
     e.target.reset();
 
     console.log(email, password);
-    navigate('/')
-  }
+    userLogin(email, password)
+      .then((result) => {
+        console.log(result.user);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((err) => console.log(err));
+  };
 
+  const handleGoolgeLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((err) => console.log(err));
+  };
 
+  const handleGithubLogin = () => {
+    githubLogin()
+      .then((result) => {
+        console.log(result.user);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div>
       <div>
         {/* form  */}
-        <div data-aos="zoom-in" data-aos-duration="1500" className="md:w-1/2 space-y-3  my-4 mx-auto">
+        <div
+          data-aos="zoom-in"
+          data-aos-duration="1500"
+          className="md:w-1/2 space-y-3  my-4 mx-auto"
+        >
           <h2 className="md:text-5xl text-3xl font-bold text-center">Log-in</h2>
-           
-            
 
           <form onSubmit={handleLogin} className="card-body py-0">
             <div className="form-control">
@@ -44,17 +72,23 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="form-control">
+            <div className="form-control relative">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="password"
+                type={`${showPassword ? "text" : "password"}`}
                 name="password"
                 placeholder="password"
                 className="input input-bordered"
                 required
               />
+              <span
+                onClick={() => setShowPassword(!showPassword)}
+                className="text-2xl absolute top-12 right-3"
+              >
+                {showPassword ? <FaEye /> : <FaEyeSlash />}
+              </span>
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">
                   Forgot password?
@@ -62,15 +96,33 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-outline text-white text-sm btn-primary">Login</button>
+              <button className="btn btn-outline text-white text-sm btn-primary">
+                Login
+              </button>
             </div>
           </form>
-          <p className="text-center">Don't have an Account ? Please <Link to={'/register'}><span className="btn-link font-bold">Register</span></Link></p>
+          <p className="text-center">
+            Don't have an Account ? Please{" "}
+            <Link to={"/register"}>
+              <span className="btn-link font-bold">Register</span>
+            </Link>
+          </p>
           <p className="text-center text-xl">or</p>
           <div className="grid md:grid-cols-2 px-8 gap-3  mx-auto">
-                <button className="w-full btn-outline btn"><FcGoogle className="text-2xl" />Login with Google</button>
-                <button className="w-full btn-outline btn"><FaFacebook className="text-2xl text-blue-700" /> Login with Facebook</button>
-            </div>
+            <button
+              onClick={handleGoolgeLogin}
+              className="w-full btn-outline btn"
+            >
+              <FcGoogle className="text-2xl" />
+              Login with Google
+            </button>
+            <button
+              onClick={handleGithubLogin}
+              className="w-full btn-outline btn"
+            >
+              <FaGithub className="text-2xl " /> Login with Github
+            </button>
+          </div>
         </div>
       </div>
     </div>
