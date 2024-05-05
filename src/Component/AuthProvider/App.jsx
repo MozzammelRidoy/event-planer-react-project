@@ -1,39 +1,32 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState } from 'react';
+// import ReactDOM from 'react-dom';
+// import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+// import Swal from 'sweetalert2';
 
-function App() {
-  const [isLoading, setIsLoading] = useState(true);
+// const Alert = () => {
+//   const [swalShown, setSwalShown] = useState(false);
 
-  useEffect(() => {
-    // Simulating data and image loading
-    const loadData = async () => {
-      try {
-        // Simulate loading time
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        // Data and images loaded
-        setIsLoading(false);
-      } catch (error) {
-        console.error('Error loading data:', error);
-        // Handle error
-      }
-    };
+//   const showSwal = () => {
+//     Swal.fire({
+//       position: "top-end",
+//       icon: "success",
+//       title: "Your work has been saved",
+//       showConfirmButton: false,
+//       timer: 1500
+//     });
+//   };
 
-    loadData();
-  }, []); // Empty dependency array ensures this effect runs only once on mount
+//   return (
+//     <>
+//       <h1>Home</h1>
+//       <button onClick={showSwal()}>Show SweetAlert2 modal</button>
+//       {swalShown && (
+//         <Link to="/about" onClick={() => Swal.close()}>
+//           Go to About
+//         </Link>
+//       )}
+//     </>
+//   );
+// };
 
-  return (
-    <div className="flex justify-center items-center h-screen">
-      {isLoading ? (
-        // Loader
-        <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-24 w-24"></div>
-      ) : (
-        // Content once loading is finished
-        <div className="text-center">
-          <h1 className="text-3xl font-bold mb-4">Welcome to My Website</h1>
-          <p className="text-lg text-gray-700">Here is your content...</p>
-        </div>
-      )}
-    </div>
-  );
-}
-
-export default App;
+// export default Alert

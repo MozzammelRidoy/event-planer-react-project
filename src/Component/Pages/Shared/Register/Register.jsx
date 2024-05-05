@@ -7,12 +7,26 @@ import { updateProfile } from "firebase/auth";
 import { useState } from "react";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { createNewUser, githubLogin, googleLogin } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
-  const location = useLocation();
+  const [regError, setRegError] = useState(''); 
 
+
+  const location = useLocation();
+  // alert
+  const showSwal = () => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      iconColor: "green",
+      title: "Registration Success. Thank You",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -27,7 +41,15 @@ const Register = () => {
 
     const email = form.get("email");
     const password = form.get("password");
-    e.target.reset();
+
+    setRegError('');
+
+    if(password.length < 6){
+      
+      return  setRegError('Password should be at least 6 Characters');
+      
+    }
+
 
     console.log(name, email, password);
     createNewUser(email, password)
@@ -37,14 +59,29 @@ const Register = () => {
           displayName: name,
           photoURL: photo,
         });
+        showSwal();
         navigate(location?.state ? location.state : "/");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        if(err.message === 'Firebase: Error (auth/email-already-in-use).'){
+          return setRegError('This email is already in use. Please use a different email address')
+
+        }
+        console.log(err.message)});
+
+        if(regError){
+          return 
+        }
+
+        e.target.reset();
+
+
   };
   const handleGoolgeLogin = () => {
     googleLogin()
       .then((result) => {
         console.log(result.user);
+        showSwal();
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => console.log(err));
@@ -53,6 +90,7 @@ const Register = () => {
     githubLogin()
       .then((result) => {
         console.log(result.user);
+        showSwal();
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => console.log(err));
@@ -141,6 +179,9 @@ const Register = () => {
                 {showPassword ? <FaEye /> : <FaEyeSlash />}
               </span>
             </div>
+            {
+              regError && <p className="text-red-500 text-center mt-2">{regError}</p>
+            }
             <div className="form-control mt-6">
               <button className="btn btn-outline text-white text-sm btn-primary">
                 Register

@@ -16,6 +16,26 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulating data and image loading
+    const loadData = async () => {
+      try {
+        // Simulate loading time
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        // Data and images loaded
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Error loading data:', error);
+        // Handle error
+      }
+    };
+
+    loadData();
+  }, []);
+
+
   // create new user with email and pass
   const createNewUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -67,6 +87,7 @@ const AuthProvider = ({ children }) => {
     githubLogin,
     forgetPassword,
     userLogout,
+    isLoading
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

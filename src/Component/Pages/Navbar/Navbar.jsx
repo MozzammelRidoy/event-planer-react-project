@@ -6,6 +6,7 @@ import "react-awesome-button/dist/styles.css";
 import { IoIosLogIn } from "react-icons/io";
 import { TypeAnimation } from "react-type-animation";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -17,6 +18,18 @@ const Navbar = () => {
   if (user) {
     userImage = user.photoURL;
   }
+
+  // alert
+  const showSwal = () => {
+    Swal.fire({
+      position: "center",
+      icon: "warning",
+      iconColor: 'orange',
+      title: `Log Out Success`,
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
 
   const navLinksEvnet = (
     <>
@@ -147,7 +160,7 @@ const Navbar = () => {
                 </div>
                 <div className="">
                 <span className="text-xl md:hidden me-3">{user.displayName}</span>
-                <span onClick={() => userLogout()}>
+                <span onClick={() => {userLogout(), showSwal()}}>
 
                   <AwesomeButton  size="small" type="primary">
                     Log Out
